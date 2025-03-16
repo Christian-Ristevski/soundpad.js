@@ -28,7 +28,8 @@ export async function openSoundpad (checkBeforeOpen = false): Promise<void> {
   const soundpadPath = getSoundpadPath()
   if (soundpadPath == null) throw new Error('Could not find Soundpad path')
   if (soundpadPath.includes('steamapps')) {
-    exec(`start steam://run/629520`)
+    exec(`"${getSoundpadPath()}"`)
+    //exec(`start steam://run/629520`)
   } else {
     exec(`"${getSoundpadPath()}"`)
   }
